@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Verify every directory has a README file
+find . -type d ! -path "./.git/*" | while read -r dir; do
+  # Check for README (case-insensitive match)
+  if [ -z "$(find "$dir" -maxdepth 1 -type f -iname 'README*')" ]; then
+    echo "Error: Directory $dir is missing a README file" >&2
+    exit 1
+  fi
+done

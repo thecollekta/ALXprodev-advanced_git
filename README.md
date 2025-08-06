@@ -55,3 +55,4 @@ git flow release finish 1.0.0
 ## License
 
 This project is licensed under the ALX ProDEV Software Engineering Backend Program.
+To install hooks: cp git-hooks/* .git/hooks/

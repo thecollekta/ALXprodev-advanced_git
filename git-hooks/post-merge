@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Only log merges to main branch
+if [ "$(git rev-parse --abbrev-ref HEAD)" = "main" ]; then
+  echo "Merged to main: $(date)" >> merge.log
+  echo "Commit: $(git rev-parse HEAD)" >> merge.log
+  echo "--------------------------------" >> merge.log
+fi
